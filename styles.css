@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Color de fondo claro */
+    color: #000; /* Color del texto */
+    text-align: center; /* Centramos el texto */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #1e90ff; /* Color azul para el borde */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+}
+
+h1 {
+    color: #1e90ff; /* Color azul para el título principal */
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+    border: 1px solid #1e90ff; /* Borde azul */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1e90ff; /* Color de fondo azul */
+    color: #ffffff; /* Color de texto blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00bfff; /* Color azul más claro al pasar el mouse */
+}
+
+.results {
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    border: 1px solid #1e90ff; /* Borde azul para la tabla */
+    padding: 10px;
+    background-color: #e0f7fa; /* Color de fondo claro para los encabezados */
+}
+
+/* Colores para la tabla periodica */
+.metales { background-color: #ffcccb; }
+.no-metales { background-color: #90ee90; }
+.gases-nobles { background-color: #add8e6; }
+.lantanidos, .actinidos { background-color: #d3d3d3; }
+
+th { 
+    border: 1px solid #1e90ff;
+    padding: 10px;
+}
+
+/* Categorías por clase */
+.metales-alkalinos { background-color: #ffa07a; }
+.gases-nobles { background-color: #add8e6; }
+

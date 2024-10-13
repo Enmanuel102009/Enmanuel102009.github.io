@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion Electronica by Enmanuel Acosta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Configuracion Electronica by Acosta R.</h1>
+        <div class="input-group">
+            <label for="inputValue">Numero Atomico o Simbolo:</label>
+            <input type="text" id="inputValue" placeholder="Ejemplo: H, 1, Z=1, e=2" required>
+            <button onclick="calculate()">Calcular</button>
+        </div>
+        <div class="results">
+            <h2>Resultados:</h2>
+            <p>Numero Atomico (Z): <span id="atomicNumber"></span></p>
+            <p>Numero de Electrones: <span id="electrons"></span></p>
+            <p>Numero de Protones: <span id="protons"></span></p>
+            <p>Masa Atomica (A): <span id="atomicMass"></span></p>
+            <p>Numero de Neutrones: <span id="neutrons"></span></p>
+            <p>Configuracion Electronica: <span id="electronConfig"></span></p>
+            <p>Configuracion Ionica: <span id="ionicConfig"></span></p>
+            <p>Gas Noble: <span id="nobleGasSymbol"></span></p>
+            <p>Nombre del Elemento: <span id="elementName"></span></p>
+            <p>Numeros Cuanticos: <span id="quantumNumbers"></span></p>
+        </div>
+        <div class="periodic-table">
+            <h2>Tabla Periodica de Elementos</h2>
+            <table>
+                <tr>
+                    <th>H</th><th>He</th>
+                </tr>
+                <tr>
+                    <th>Li</th><th>Be</th><th>B</th><th>C</th><th>N</th><th>O</th><th>F</th><th>Ne</th>
+                </tr>
+                <tr>
+                    <th>Na</th><th>Mg</th><th>Al</th><th>Si</th><th>P</th><th>S</th><th>Cl</th><th>Ar</th>
+                </tr>
+                <tr>
+                    <th>K</th><th>Ca</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th>
+                </tr>
+                <tr>
+                    <th>Ga</th><th>Ge</th><th>As</th><th>Se</th><th>Br</th><th>Kr</th>
+                </tr>
+                <tr>
+                    <th>Rb</th><th>Sr</th><th>Y</th><th>Zr</th><th>Nb</th><th>Mo</th><th>Tc</th><th>Ru</th><th>Rh</th><th>Pd</th><th>Ag</th><th>Cd</th>
+                </tr>
+                <tr>
+                    <th>In</th><th>Sn</th><th>Sb</th><th>Te</th><th>I</th><th>Xe</th>
+                </tr>
+                <tr>
+                    <th>Cs</th><th>Ba</th><th>La</th><th>Ce</th><th>Pr</th><th>Nd</th><th>Pm</th><th>Sm</th><th>Eu</th><th>Gd</th><th>Tb</th><th>Dy</th><th>Ho</th><th>Er</th><th>Tm</th><th>Yb</th><th>Lu</th>
+                </tr>
+                <tr>
+                    <th>Hf</th><th>Ta</th><th>W</th><th>Re</th><th>Os</th><th>Ir</th><th>Pt</th><th>Au</th><th>Hg</th>
+                </tr>
+                <tr>
+                    <th>Tl</th><th>Pb</th><th>Bi</th><th>Po</th><th>At</th><th>Rn</th>
+                </tr>
+                <tr>
+                    <th>Fr</th><th>Ra</th><th>Ac</th><th>Th</th><th>Pa</th><th>U</th><th>Np</th><th>Pu</th><th>Am</th><th>Cm</th><th>Bk</th><th>Cf</th><th>Es</th><th>Fm</th><th>Md</th><th>No</th><th>Lr</th>
+                </tr>
+                <tr>
+                    <th>Rf</th><th>Db</th><th>Sg</th><th>Bh</th><th>Hs</th><th>Mt</th><th>Ds</th><th>Rg</th><th>Cn</th><th>Nh</th><th>Fl</th><th>Mc</th><th>Lv</th><th>Ts</th><th>Og</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
