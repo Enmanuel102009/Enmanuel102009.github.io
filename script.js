@@ -200,7 +200,7 @@ function calculate() {
     }
 }
 
-// Función mejorada para calcular la configuración electrónica
+// Función mejorada para calcular la configuración electrónica con separación por comas
 function calculateElectronConfiguration(electrons) {
     const orbitals = [
         { name: "1s", maxElectrons: 2 },
