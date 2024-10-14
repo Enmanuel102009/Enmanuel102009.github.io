@@ -289,3 +289,12 @@ function calculateIonicConfiguration(element) {
  
 return element.e > element.Z ? 'Configuración iónica positiva' : 'Configuración iónica negativa';
 }
+case "SYMBOL":
+    element = elements[value.toUpperCase()];
+    if (!element) {
+        alert("Símbolo no encontrado.");
+        return;
+    }
+    break;
+
+
