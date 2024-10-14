@@ -137,11 +137,15 @@ function calculate() {
     let element;
 
     try {
+        // Comprobar si el valor ingresado es un símbolo, número atómico o variable con formato "Variable=Valor"
         if (elements[inputValue]) {
+            // Buscar por símbolo
             element = elements[inputValue];
         } else if (!isNaN(inputValue)) {
+            // Buscar por número atómico
             element = Object.values(elements).find(e => e.Z === parseInt(inputValue));
         } else {
+            // Buscar por otras variables Z, e, P+, A, N
             const [variable, value] = inputValue.split("=");
             if (variable && value) {
                 const numericValue = parseInt(value);
@@ -149,7 +153,7 @@ function calculate() {
                     alert("El valor después del signo '=' debe ser un número.");
                     return;
                 }
-                switch (variable) {
+                switch (variable.toUpperCase()) {
                     case "Z":
                         element = Object.values(elements).find(e => e.Z === numericValue);
                         break;
@@ -164,6 +168,13 @@ function calculate() {
                         break;
                     case "N":
                         element = Object.values(elements).find(e => e.n === numericValue);
+                        break;
+                    case "SYMBOL": // Añadimos la búsqueda por símbolo
+                        element = elements[value.toUpperCase()];
+                        if (!element) {
+                            alert("Símbolo no encontrado.");
+                            return;
+                        }
                         break;
                     default:
                         alert("Variable no reconocida. Usa Z, e, P+, A o N.");
@@ -180,6 +191,7 @@ function calculate() {
             return;
         }
 
+        // Actualizar los resultados
         document.getElementById("atomicNumber").innerText = element.Z;
         document.getElementById("electrons").innerText = element.e;
         document.getElementById("protons").innerText = element.p;
@@ -223,21 +235,57 @@ function calculateElectronConfiguration(electrons) {
     let i = 0;
 
     while (electrons > 0 && i < orbitals.length) {
-        const { name, maxElectrons } = orbitals[i];
+        
+        con
+const { name, maxElectrons } = orbitals[i];
         if (electrons >= maxElectrons) {
-            configuration.push(`${name}${maxElectrons}`);
+            configuration.
+            configurati
+push(`${name}${maxElectrons}`);
             electrons -= maxElectrons;
-        } else {
-            configuration.push(`${name}${electrons}`);
-            electrons = 0;
+        } 
+            electrons -= maxElectrons;
+        } 
+
+            electrons -= maxElectrons;
+    
+
+            electrons -
+
+           
+else {
+            configuration.
+            configuratio
+
+            c
+push(`${name}${electrons}`);
+            electrons = 
+            e
+
+   
+0;
         }
         i++;
     }
 
-    return configuration.join(', ');
+    
+        }
+        i++;
+    }
+
+
+        }
+      
+
+ 
+return configuration.join(', ');
 }
 
+
+}
 // Función para calcular la configuración iónica (simplificada)
 function calculateIonicConfiguration(element) {
-    return element.e > element.Z ? 'Configuración iónica positiva' : 'Configuración iónica negativa';
+    
+ 
+return element.e > element.Z ? 'Configuración iónica positiva' : 'Configuración iónica negativa';
 }
