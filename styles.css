@@ -74,3 +74,24 @@ th {
 .metales-alkalinos { background-color: #ffa07a; }
 .gases-nobles { background-color: #add8e6; }
 
+.periodic-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.periodic-table th {
+    border: 1px solid #1e90ff;
+    padding: 15px;
+    text-align: center;
+    background-color: #e0f7fa;
+    font-weight: bold;
+    width: 7%;
+    height: 60px;
+}
+
+.periodic-table th.empty {
+    background-color: #ffffff;
+    border: none;
+}
+
+
