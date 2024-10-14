@@ -139,130 +139,316 @@ function calculate() {
     try {
         // Comprobar si el valor ingresado es un símbolo, número atómico o variable con formato "Variable=Valor"
         if (elements[inputValue]) {
-            // Buscar por símbolo
+            
+          
+// Buscar por símbolo directamente
             element = elements[inputValue];
-        } else if (!isNaN(inputValue)) {
-            // Buscar por número atómico
-            element = Object.values(elements).find(e => e.Z === parseInt(inputValue));
-        } else {
+        } 
+            element = elements[inputValue];
+     
+
+            element = elements[inputValue
+
+            element = elemen
+
+            elemen
+
+        
+
+   
+else if (!isNaN(inputValue)) {
+            
+        
+// Buscar por número atómico
+            element = 
+            element = 
+Object.values(elements).find(e => e.Z === parseInt(inputValue));
+        } 
+        } e
+else {
             // Buscar por otras variables Z, e, P+, A, N
-            const [variable, value] = inputValue.split("=");
-            if (variable && value) {
-                const numericValue = parseInt(value);
-                if (isNaN(numericValue)) {
-                    alert("El valor después del signo '=' debe ser un número.");
-                    return;
+            
+            c
+
+         
+const [variable, value] = inputValue.split("=");
+            
+        
+if (variable && value) {
+                
+                co
+
+       
+
+  
+const numericValue = parseInt(value);
+                
+        
+if (isNaN(numericValue)) {
+                    
+ 
+alert("El valor después del signo '=' debe ser un número.");
+                    
+                  
+
+       
+return;
                 }
-                switch (variable.toUpperCase()) {
-                    case "Z":
-                        element = Object.values(elements).find(e => e.Z === numericValue);
-                        break;
-                    case "E":
-                        element = Object.values(elements).find(e => e.e === numericValue);
+                
+                }
+                swi
+
+                }
+ 
+
+         
+switch (variable.toUpperCase()) {
+                    
+           
+case "Z":
+                        element = 
+                        element = O
+
+                        element
+
+                        ele
+
+                      
+Object.values(elements).find(e => e.Z === numericValue);
+                        
+                  
+
+        
+break;
+                    
+                  
+case "E":
+                        element = 
+                    
+Object.values(elements).find(e => e.e === numericValue);
                         break;
                     case "P+":
                         element = Object.values(elements).find(e => e.p === numericValue);
                         break;
                     case "A":
                         element = Object.values(elements).find(e => e.A === numericValue);
-                        break;
-                    case "N":
-                        element = Object.values(elements).find(e => e.n === numericValue);
-                        break;
-                    case "SYMBOL": // Añadimos la búsqueda por símbolo
-                        element = elements[value.toUpperCase()];
-                        if (!element) {
-                            alert("Símbolo no encontrado.");
-                            return;
+                        
+                        b
+
+              
+break;
+                    
+                    ca
+case "N":
+                        element = 
+        
+Object.values(elements).find(e => e.n === numericValue);
+                        
+                        brea
+
+             
+break;
+                    
+              
+case "SYMBOL":
+                        element = elements[value.
+                        element 
+
+            
+toUpperCase()];
+                        
+                  
+if (!element) {
+                            
+    
+alert("Símbolo no encontrado.");
+                            
+        
+return;
                         }
-                        break;
-                    default:
-                        alert("Variable no reconocida. Usa Z, e, P+, A o N.");
-                        return;
+                        
+                        }
+                        bre
+
+                        }
+                
+
+  
+break;
+                    
+                    def
+default:
+                        
+               
+alert("Variable no reconocida. Usa Z, e, P+, A o N.");
+                        
+                     
+return;
                 }
-            } else {
-                alert("Formato no válido. Usa 'Z=1', 'e=2', etc.");
-                return;
+            } 
+                }
+            } e
+
+                }
+ 
+
+    
+else {
+                
+           
+alert("Formato no válido. Usa 'Z=1', 'e=2', etc.");
+                
+               
+return;
             }
         }
 
-        if (!element) {
-            alert("Elemento no encontrado.");
+        
+            }
+        }
+
+       
+
+            }
+
+           
+if (!element) {
+            
+           
+alert("Elemento no encontrado.");
             return;
         }
 
         // Actualizar los resultados
         document.getElementById("atomicNumber").innerText = element.Z;
-        document.getElementById("electrons").innerText = element.e;
+        
+        
+document.getElementById("electrons").innerText = element.e;
         document.getElementById("protons").innerText = element.p;
-        document.getElementById("atomicMass").innerText = element.A;
-        document.getElementById("neutrons").innerText = element.n;
+        
+        
+document.getElementById("atomicMass").innerText = element.A;
+        
+        docu
+
+     
+
+ 
+document.getElementById("neutrons").innerText = element.n;
         document.getElementById("electronConfig").innerText = calculateElectronConfiguration(element.e);
         document.getElementById("ionicConfig").innerText = calculateIonicConfiguration(element);
-        document.getElementById("nobleGasSymbol").innerText = nobleGases[Math.ceil(element.Z / 10)];
-        document.getElementById("elementName").innerText = element.name;
-    } catch (error) {
-        console.error("Error al calcular el elemento:", error);
-        alert("Ocurrió un error al intentar calcular. Verifica la consola del navegador para más detalles.");
+        
+        docum
+document.getElementById("nobleGasSymbol").innerText = nobleGases[Math.ceil(element.Z / 10)];
+        
+        docu
+
+     
+document.getElementById("elementName").innerText = element.name;
+    } 
+   
+catch (error) {
+        
+        consol
+
+ 
+console.error("Error al calcular el elemento:", error);
+        
+        
+alert("Ocurrió un error al intentar calcular. Verifica la consola del navegador para más detalles.");
     }
 }
 
 // Función mejorada para calcular la configuración electrónica
 function calculateElectronConfiguration(electrons) {
     const orbitals = [
-        { name: "1s", maxElectrons: 2 },
-        { name: "2s", maxElectrons: 2 },
+        { 
+        { name
+
+   
+name: "1s", maxElectrons: 2 },
+        { 
+       
+name: "2s", maxElectrons: 2 },
         { name: "2p", maxElectrons: 6 },
-        { name: "3s", maxElectrons: 2 },
-        { name: "3p", maxElectrons: 6 },
+        { 
+        { na
+
+       
+name: "3s", maxElectrons: 2 },
+        { 
+       
+
+ 
+name: "3p", maxElectrons: 6 },
         { name: "4s", maxElectrons: 2 },
-        { name: "3d", maxElectrons: 10 },
+        { 
+        { 
+
+     
+name: "3d", maxElectrons: 10 },
         { name: "4p", maxElectrons: 6 },
-        { name: "5s", maxElectrons: 2 },
+        { 
+       
+name: "5s", maxElectrons: 2 },
         { name: "4d", maxElectrons: 10 },
-        { name: "5p", maxElectrons: 6 },
-        { name: "6s", maxElectrons: 2 },
-        { name: "4f", maxElectrons: 14 },
-        { name: "5d", maxElectrons: 10 },
-        { name: "6p", maxElectrons: 6 },
+        { 
+        { name
+
+   
+name: "5p", maxElectrons: 6 },
+        { 
+   
+name: "6s", maxElectrons: 2 },
+        { 
+   
+name: "4f", maxElectrons: 14 },
+        { 
+      
+name: "5d", maxElectrons: 10 },
+        { 
+        { na
+
+       
+name: "6p", maxElectrons: 6 },
         { name: "7s", maxElectrons: 2 },
-        { name: "5f", maxElectrons: 14 },
-        { name: "6d", maxElectrons: 10 },
+        { 
+        { name
+
+        {
+name: "5f", maxElectrons: 14 },
+        { 
+  
+name: "6d", maxElectrons: 10 },
         { name: "7p", maxElectrons: 6 }
     ];
 
-    let configuration = [];
-    let i = 0;
+    
+    ];
+
+let configuration = [];
+    
+    l
+let i = 0;
 
     while (electrons > 0 && i < orbitals.length) {
+        const { name, maxElectrons } = orbitals[i];
         
-        con
-const { name, maxElectrons } = orbitals[i];
-        if (electrons >= maxElectrons) {
+      
+if (electrons >= maxElectrons) {
             configuration.
-            configurati
+            configu
 push(`${name}${maxElectrons}`);
             electrons -= maxElectrons;
         } 
             electrons -= maxElectrons;
-        } 
+        }
 
-            electrons -= maxElectrons;
     
-
-            electrons -
-
-           
 else {
-            configuration.
-            configuratio
-
-            c
-push(`${name}${electrons}`);
+            configuration.push(`${name}${electrons}`);
             electrons = 
-            e
-
-   
+       
 0;
         }
         i++;
@@ -273,28 +459,17 @@ push(`${name}${electrons}`);
         i++;
     }
 
+  
 
-        }
       
-
- 
 return configuration.join(', ');
 }
 
-
-}
 // Función para calcular la configuración iónica (simplificada)
+
+funct
 function calculateIonicConfiguration(element) {
     
- 
+    re
 return element.e > element.Z ? 'Configuración iónica positiva' : 'Configuración iónica negativa';
 }
-case "SYMBOL":
-    element = elements[value.toUpperCase()];
-    if (!element) {
-        alert("Símbolo no encontrado.");
-        return;
-    }
-    break;
-
-
